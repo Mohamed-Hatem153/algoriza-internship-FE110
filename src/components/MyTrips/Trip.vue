@@ -61,7 +61,6 @@
       <Button
         value="View trip details"
         class="w-fit"
-        @click="redirectToTrip()"
       />
     </div>
   </div>
