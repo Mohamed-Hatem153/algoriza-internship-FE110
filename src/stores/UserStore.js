@@ -55,6 +55,7 @@ export const useSearchStore = defineStore("searchStore", {
     destName: null,
     initialPageNumber: 1,
     hotelDetails: null,
+    hotelDescription: null,
     searchNumber: null,
     RoomsArr: null,
     selectedHotel: [],
@@ -238,6 +239,29 @@ export const useSearchStore = defineStore("searchStore", {
         this.RoomsArr = RoomsArr;
         console.log(RoomsArr);
         this.hotelDetails = response.data.data;
+      } catch (error) {
+        console.error(error);
+      }
+    },
+    async getHotelDescription(hotelId) {
+      const options = {
+        method: 'GET',
+        url: 'https://booking-com15.p.rapidapi.com/api/v1/hotels/getDescriptionAndInfo',
+        params: {
+          hotel_id: hotelId,
+          languagecode: 'en-us'
+        },
+        headers: {
+          "X-RapidAPI-Key":
+            "c691aeae33msh3763586ea30a644p1daf87jsn1c1462b987d9",
+          "X-RapidAPI-Host": "booking-com15.p.rapidapi.com",
+        },
+      };
+
+      try {
+        const response = await axios.request(options);
+        console.log(response.data.data);
+        this.hotelDescription = response.data.data;
       } catch (error) {
         console.error(error);
       }

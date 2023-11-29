@@ -40,22 +40,8 @@
           class="bg-white mt-[31px] pt-6 pr-10 pb-[41px] pl-[30px] rounded-md"
         >
           <p class="text-lg font-medium text-footer-color mb-5">Overview</p>
-          <p class="mb-4">
-            Featuring free WiFi throughout the property, Lakeside Motel
-            Waterfront offers accommodations in Lakes Entrance, 19 mi from
-            Bairnsdale. Free private parking is available on site.!
-          </p>
-          <p class="mb-4">
-            Each room at this motel is air conditioned and comes with a
-            flat-screen TV. You will find a kettle, toaster and a microwave in
-            the room. Each room is fitted with a private bathroom. Guests have
-            access to barbecue facilities and a lovely large lawn area. Metung
-            is 6.8 mi from Lakeside Motel Waterfront, while Paynesville is 14 mi
-            from the property.
-          </p>
-          <p class="mb-[44px]">
-            Couples in particular like the location – they rated it 9.2 for a
-            two-person trip.
+          <p class="mb-4" v-for="description in searchStore.hotelDescription" :key="description.description">
+            {{ description.description }}
           </p>
           <hr />
           <p class="mt-[26px] mb-6 text-lg font-medium text-footer-color">
@@ -79,18 +65,8 @@
         </div>
       </div>
       <div class="w-[447px] mt-[53px]">
-        <iframe
-          class="w-full h-60"
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d110502.61185094368!2d31.340866129036776!3d30.05961134289443!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14583fa60b21beeb%3A0x79dfb296e8423bba!2z2KfZhNmC2KfZh9ix2KnYjCDZhdit2KfZgdi42Kkg2KfZhNmC2KfZh9ix2KnigKw!5e0!3m2!1sar!2seg!4v1700966520281!5m2!1sar!2seg"
-          width="400"
-          height="300"
-          style="border: 0"
-          allowfullscreen=""
-          loading="lazy"
-          referrerpolicy="no-referrer-when-downgrade"
-        ></iframe>
-        <!-- <iframe v-if="searchStore.hotelDetails" src="'https://maps.google.com/maps?q=' + searchStore.hotelDetails.latitude + ',' + searchStore.hotelDetails.longitude + '&t=&z=15&ie=UTF8&iwloc=&output=embed'" /> -->
-        <!-- <iframe v-if="searchStore.hotelDetails" src="'//maps.google.com/maps?q=' + searchStore.hotelDetails.latitude + ',' + searchStore.hotelDetails.longitude + '&z=15&output=embed'"></iframe> -->
+        <iframe v-if="searchStore.hotelDetails" class="w-full h-60" width="400"
+          height="300" :src="'https://maps.google.com/maps?q=' + searchStore.hotelDetails.latitude + ',' + searchStore.hotelDetails.longitude + '&t=&z=15&ie=UTF8&iwloc=&output=embed'" />
         <div>
           <p class="mt-[35px] mb-[22px]">Explore the area</p>
           <div class="flex items-center justify-between mb-3">
@@ -255,6 +231,7 @@ const hotelId = route.params.hotelId;
 const searchStore = useSearchStore();
 onMounted(() => {
   searchStore.getHotelDetails(hotelId);
+  searchStore.getHotelDescription(hotelId)
 });
 const handleSelectHotel = () => {
   searchStore.selectHotel(searchStore.hotelDetails);
