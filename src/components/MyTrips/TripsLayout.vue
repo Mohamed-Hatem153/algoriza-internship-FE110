@@ -1,6 +1,6 @@
 <template>
   <div class="w-full flex flex-col items-center bg-overview-bg">
-    <div class="containet">
+    <div class="">
       <p
         class="w-[1030px] text-hotel-name text-[32px] font-semibold mt-[60px] mb-[28px]"
       >
@@ -18,12 +18,14 @@
             </template>
           </Suspense>
       </div>
+      <ThanksCard />
     </div>
   </div>
 </template>
 
 <script setup>
 import {ref,defineAsyncComponent} from 'vue'
+import ThanksCard from './ThanksCard.vue'
 import TripSkeleton from './TripSkeleton.vue'
 const AsyncTrip = defineAsyncComponent(() =>
   import('./Trip.vue')
