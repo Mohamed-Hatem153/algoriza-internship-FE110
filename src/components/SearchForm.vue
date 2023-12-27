@@ -107,7 +107,7 @@
 import Button from "./Button.vue";
 import { useRouter } from "vue-router";
 // import axios from "axios";
-import { ref, onMounted, computed } from "vue";
+import { ref, onMounted, computed , defineProps } from "vue";
 import { useUserStore } from "@/stores/UserStore";
 import { useSearchStore } from "@/stores/UserStore";
 const hotelDestinations = ref("Where are you going?");
@@ -121,6 +121,7 @@ const minDate = ref("");
 const router = useRouter();
 const userStore = useUserStore();
 const searchStore = useSearchStore();
+const props = defineProps(['location','checkIn','checkOut','guests','rooms'])
 //////////////
 // const searchParams = {
 //     location: hotelDestinations.value,
@@ -135,16 +136,23 @@ const redirect = () => {
 };
 const redirectToResults = () => {
   return router.push({ name: "search-results" ,query: {
-    location: hotelDestinations.value,
-    checkIn: checkInDate.value,
-    checkOut: checkOutDate.value,
-    guests: guests.value,
-    rooms: rooms.value,
+    location: searchStore.hotelDestinations,
+    checkIn: searchStore.checkInDate,
+    checkOut: searchStore.checkOutDate,
+    guests: searchStore.guests,
+    rooms: searchStore.rooms,
   }});
 };
 onMounted(() => {
   setMinDate();
   searchStore.getHotelDest();
+  if(props.location){
+    hotelDestinations.value= props.location
+    checkInDate.value = props.checkIn
+    checkOutDate.value = props.checkOut
+    guests.value = props.guests
+    rooms.value = props.rooms
+  }
 });
 const setMinDate = () => {
   const today = new Date();

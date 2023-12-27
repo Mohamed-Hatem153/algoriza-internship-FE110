@@ -4,6 +4,7 @@
     <HeroSection />
     <keep-alive>
       <SearchForm
+        v-if="location"
         :location="location"
         :checkIn="checkIn"
         :checkOut="checkOut"
