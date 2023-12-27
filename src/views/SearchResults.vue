@@ -50,6 +50,12 @@ onMounted(() => {
       route.query.guests,
       route.query.rooms
     );
+    searchStore.hotelDestinations = route.query.location
+    searchStore.checkInDate = route.query.checkIn
+    searchStore.checkOutDate = route.query.checkOut
+    searchStore.guests = route.query.guests
+    searchStore.rooms = route.query.rooms
+    searchStore.getSortByOptions();
   }
 });
 </script>
