@@ -20,6 +20,7 @@ const routes = [
     path: "/",
     name: "home",
     component: HomeView,
+    props: true,
     meta: {
       title: "My Dream Place",
     },
@@ -44,6 +45,7 @@ const routes = [
     path: "/search-results",
     name: "search-results",
     component: () => import("../views/SearchResults.vue"),
+    props: true,
     beforeEnter: requireAuth,
     meta: {
       title: "Hotels",

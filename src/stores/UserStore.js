@@ -85,7 +85,7 @@ export const useSearchStore = defineStore("searchStore", {
         },
         headers: {
           "X-RapidAPI-Key":
-            "c691aeae33msh3763586ea30a644p1daf87jsn1c1462b987d9",
+            'ef36b597d2mshf27ebeeadd6f63cp109ce7jsn3be116e2947d',
           "X-RapidAPI-Host": "booking-com15.p.rapidapi.com",
         },
       };
@@ -132,7 +132,7 @@ export const useSearchStore = defineStore("searchStore", {
         params: { query: "egypt" },
         headers: {
           "X-RapidAPI-Key":
-            "c691aeae33msh3763586ea30a644p1daf87jsn1c1462b987d9",
+            'ef36b597d2mshf27ebeeadd6f63cp109ce7jsn3be116e2947d',
           "X-RapidAPI-Host": "booking-com15.p.rapidapi.com",
         },
       };
@@ -160,7 +160,7 @@ export const useSearchStore = defineStore("searchStore", {
         },
         headers: {
           "X-RapidAPI-Key":
-            "c691aeae33msh3763586ea30a644p1daf87jsn1c1462b987d9",
+            'ef36b597d2mshf27ebeeadd6f63cp109ce7jsn3be116e2947d',
           "X-RapidAPI-Host": "booking-com15.p.rapidapi.com",
         },
       };
@@ -191,7 +191,7 @@ export const useSearchStore = defineStore("searchStore", {
         },
         headers: {
           "X-RapidAPI-Key":
-            "c691aeae33msh3763586ea30a644p1daf87jsn1c1462b987d9",
+            'ef36b597d2mshf27ebeeadd6f63cp109ce7jsn3be116e2947d',
           "X-RapidAPI-Host": "booking-com15.p.rapidapi.com",
         },
       };
@@ -224,7 +224,7 @@ export const useSearchStore = defineStore("searchStore", {
         },
         headers: {
           "X-RapidAPI-Key":
-            "c691aeae33msh3763586ea30a644p1daf87jsn1c1462b987d9",
+            'ef36b597d2mshf27ebeeadd6f63cp109ce7jsn3be116e2947d',
           "X-RapidAPI-Host": "booking-com15.p.rapidapi.com",
         },
       };
@@ -253,7 +253,7 @@ export const useSearchStore = defineStore("searchStore", {
         },
         headers: {
           "X-RapidAPI-Key":
-            "c691aeae33msh3763586ea30a644p1daf87jsn1c1462b987d9",
+            'ef36b597d2mshf27ebeeadd6f63cp109ce7jsn3be116e2947d',
           "X-RapidAPI-Host": "booking-com15.p.rapidapi.com",
         },
       };
@@ -291,7 +291,7 @@ export const useSearchStore = defineStore("searchStore", {
         },
         headers: {
           "X-RapidAPI-Key":
-            "c691aeae33msh3763586ea30a644p1daf87jsn1c1462b987d9",
+            'ef36b597d2mshf27ebeeadd6f63cp109ce7jsn3be116e2947d',
           "X-RapidAPI-Host": "booking-com15.p.rapidapi.com",
         },
       };
@@ -333,7 +333,7 @@ export const useSearchStore = defineStore("searchStore", {
         },
         headers: {
           "X-RapidAPI-Key":
-            "c691aeae33msh3763586ea30a644p1daf87jsn1c1462b987d9",
+            'ef36b597d2mshf27ebeeadd6f63cp109ce7jsn3be116e2947d',
           "X-RapidAPI-Host": "booking-com15.p.rapidapi.com",
         },
       };
@@ -376,7 +376,7 @@ export const useSearchStore = defineStore("searchStore", {
         },
         headers: {
           "X-RapidAPI-Key":
-            "c691aeae33msh3763586ea30a644p1daf87jsn1c1462b987d9",
+            'ef36b597d2mshf27ebeeadd6f63cp109ce7jsn3be116e2947d',
           "X-RapidAPI-Host": "booking-com15.p.rapidapi.com",
         },
       };

@@ -121,11 +121,26 @@ const minDate = ref("");
 const router = useRouter();
 const userStore = useUserStore();
 const searchStore = useSearchStore();
+//////////////
+// const searchParams = {
+//     location: hotelDestinations.value,
+//     checkIn: checkInDate.value,
+//     checkOut: checkOutDate.value,
+//     guests: guests.value,
+//     rooms: rooms.value,
+//   };
+/////////////////
 const redirect = () => {
   return router.push({ name: "register" });
 };
 const redirectToResults = () => {
-  return router.push({ name: "search-results" });
+  return router.push({ name: "search-results" ,query: {
+    location: hotelDestinations.value,
+    checkIn: checkInDate.value,
+    checkOut: checkOutDate.value,
+    guests: guests.value,
+    rooms: rooms.value,
+  }});
 };
 onMounted(() => {
   setMinDate();
