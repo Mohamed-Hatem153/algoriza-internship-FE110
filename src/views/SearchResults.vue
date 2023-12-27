@@ -27,18 +27,29 @@ import Covid from "@/components/Covid.vue";
 import Footer from "@/components/Footer.vue";
 import SearchResultsLayout from "@/components/SearchResults/SearchResultLayout.vue";
 import { useRoute } from "vue-router";
-import {onMounted, ref } from 'vue'
+import { onMounted, ref } from "vue";
+import { useSearchStore } from "@/stores/UserStore";
 const location = ref(null);
 const checkIn = ref(null);
 const checkOut = ref(null);
 const guests = ref(null);
 const rooms = ref(null);
 const route = useRoute();
+const searchStore = useSearchStore();
 onMounted(() => {
   location.value = route.query.location;
   checkIn.value = route.query.checkIn;
   checkOut.value = route.query.checkOut;
   guests.value = route.query.guests;
   rooms.value = route.query.rooms;
+  if (route.query.location) {
+    searchStore.getResults(
+      route.query.location,
+      route.query.checkIn,
+      route.query.checkOut,
+      route.query.guests,
+      route.query.rooms
+    );
+  }
 });
 </script>
